@@ -3,10 +3,11 @@ entries:
   zookeeper:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-07T16:14:34.684971142-08:00
+    created: 2018-11-07T16:42:05.592594741-08:00
     description: A Helm chart for Kubernetes
     digest: 292864e8b217855c31c6c5ca1ebf080935897acce74f5a96c8fa19dc52449c32
     name: zookeeper
     urls:
     - https://scm.starbucks.com/BITSOPS/helm-charts/zookeeper-0.1.0.tgz
     version: 0.1.0
+generated: 2018-11-07T16:42:05.592037017-08:00
