@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   kafka:
   - appVersion: 2.0.0
-    created: 2018-11-08T17:30:14.602089204-08:00
+    created: 2018-11-09T12:03:26.043062918-08:00
     description: Apache Kafka is a distributed streaming platform.
     digest: 85894704a086046172e8588c19654474261704fbf2e523561f7ab2677035d6c6
     home: https://kafka.apache.org/
@@ -21,9 +21,26 @@ entries:
     urls:
     - https://ingared8.github.io/skack/kafka-1.0.0.tgz
     version: 1.0.0
+  spark:
+  - appVersion: 1.5.1
+    created: 2018-11-09T12:03:26.043533584-08:00
+    description: Fast and general-purpose cluster computing system.
+    digest: 00ac6b1a330ac53e35db019a3a68c198c421d2606c9371335aa013e55789968c
+    home: http://spark.apache.org
+    icon: http://spark.apache.org/images/spark-logo-trademark.png
+    maintainers:
+    - email: ingared008@gmail.com
+      name: ingared
+    name: spark
+    sources:
+    - https://github.com/kubernetes/kubernetes/tree/master/examples/spark
+    - https://github.com/apache/spark
+    urls:
+    - https://ingared8.github.io/skack/spark-0.2.1.tgz
+    version: 0.2.1
   zookeeper:
   - appVersion: 3.4.12
-    created: 2018-11-08T17:30:14.602933513-08:00
+    created: 2018-11-09T12:03:26.04473716-08:00
     description: A centralized service for maintaining configuration information,
       naming, providing distributed synchronization, and providing group services
       for distributed applications.
@@ -42,11 +59,11 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-08T17:30:14.602449703-08:00
+    created: 2018-11-09T12:03:26.044000321-08:00
     description: A Helm chart for Kubernetes
     digest: 292864e8b217855c31c6c5ca1ebf080935897acce74f5a96c8fa19dc52449c32
     name: zookeeper
     urls:
     - https://ingared8.github.io/skack/zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: 2018-11-08T17:30:14.601088779-08:00
+generated: 2018-11-09T12:03:26.04178809-08:00
