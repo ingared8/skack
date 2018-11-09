@@ -1,13 +1,52 @@
 apiVersion: v1
 entries:
+  kafka:
+  - appVersion: 2.0.0
+    created: 2018-11-08T17:30:14.602089204-08:00
+    description: Apache Kafka is a distributed streaming platform.
+    digest: 85894704a086046172e8588c19654474261704fbf2e523561f7ab2677035d6c6
+    home: https://kafka.apache.org/
+    keywords:
+    - kafka
+    - zookeeper
+    - streaming
+    - producer
+    - consumer
+    maintainers:
+    - email: ingared008@gmail.com
+      name: inagred
+    name: kafka
+    sources:
+    - https://github.com/bitnami/bitnami-docker-kafka
+    urls:
+    - https://ingared8.github.io/skack/kafka-1.0.0.tgz
+    version: 1.0.0
   zookeeper:
+  - appVersion: 3.4.12
+    created: 2018-11-08T17:30:14.602933513-08:00
+    description: A centralized service for maintaining configuration information,
+      naming, providing distributed synchronization, and providing group services
+      for distributed applications.
+    digest: 4f4772f98876c86314345181ee51c82e4146ce7fe0bf326b2ae46b4ddd01bd45
+    home: https://zookeeper.apache.org/
+    keywords:
+    - zookeeper
+    maintainers:
+    - email: ingared008@gmail.com
+      name: ingared
+    name: zookeeper
+    sources:
+    - https://github.com/bitnami/bitnami-docker-zookeeper
+    urls:
+    - https://ingared8.github.io/skack/zookeeper-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-11-08T17:17:07.822216477-08:00
+    created: 2018-11-08T17:30:14.602449703-08:00
     description: A Helm chart for Kubernetes
     digest: 292864e8b217855c31c6c5ca1ebf080935897acce74f5a96c8fa19dc52449c32
     name: zookeeper
     urls:
-    - https://scm.starbucks.com/BITSOPS/helm-charts/zookeeper-0.1.0.tgz
+    - https://ingared8.github.io/skack/zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: 2018-11-08T17:17:07.821523876-08:00
+generated: 2018-11-08T17:30:14.601088779-08:00
