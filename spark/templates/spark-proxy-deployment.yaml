@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "proxy-fullname" . }}
+  labels:
+    heritage: {{ .Release.Service | quote }}
+    release: {{ .Release.Name | quote }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    component: "{{ .Release.Name }}-{{ .Values.Proxy.Component }}"
+spec:
+  replicas: {{ default 1 .Values.Proxy.Replicas }}
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      component: "{{ .Release.Name }}-{{ .Values.Proxy.Component }}"
+  template:
+    metadata:
+      labels:
+        heritage: {{ .Release.Service | quote }}
+        release: {{ .Release.Name | quote }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        component: "{{ .Release.Name }}-{{ .Values.Proxy.Component }}"
+    spec:
+      containers:
+        - name: {{ template "proxy-fullname" . }}
+          image: "{{ .Values.proxy.Image }}:{{ .Values.proxy.ImageTag }}"
+          args: 
+          -  {{ template "master-fullname" . }}:{{ .Values.WebUi.ContainerPort }}
+          ports:
+            - containerPort: {{ .Values.Proxy.ContainerPort }}
+          resources:
+            requests:
+              cpu: "{{ .Values.Proxy.Cpu }}"
+              memory: "{{ .Values.Proxy.Memory }}"
+          livenessProbe:
+              httpGet:
+                path: /
+                port: {{ .Values.Proxy.ContainerPort }} 
+              initialDelaySeconds: 120
+              timeoutSeconds: 5

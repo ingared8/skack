@@ -1,0 +1,35 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: s08-ui-proxy-controller
+spec:
+  replicas: 1
+  selector:
+    component: s08-ui-proxy
+  template:
+    metadata:
+      labels:
+        component: s08-ui-proxy
+    spec:
+      nodeSelector:
+        # run the label command to prepare
+        # kubectl label node <SOME NODE> sparkNode=s08-1
+        sparkNode: s08-1
+      containers:
+        - name: s08-ui-proxy
+          image: navicore/spark-ui-proxy
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+          args:
+            - s08-master:8080
+          livenessProbe:
+              httpGet:
+                path: /
+                port: 80
+              initialDelaySeconds: 120
+              timeoutSeconds: 5
+
+
