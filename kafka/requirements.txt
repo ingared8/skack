@@ -1,0 +1,5 @@
+dependencies:
+- name: zookeeper
+  version: 0.x.x
+  repository: https://ingared8.github.io/skack
+  condition: zookeeper.enabled
